@@ -1,0 +1,14 @@
+- name: Download and execute script using HTTP/HTTPS
+  hosts: all
+  remote_user: virtualbox
+  tasks:
+  - name: Make directory
+    file:
+      path: ~/.temp
+      state: directory
+      mode: 0777
+  - name: Get script
+      get_url:
+        url: “https://github.com/Danik1601/Better-Fedora/blob/main/Resources/Better-Fedora.sh”
+        dest: ~/.temp
+        mode: 0777
