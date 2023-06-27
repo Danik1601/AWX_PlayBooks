@@ -3,15 +3,19 @@
   hosts: all
   remote_user: virtualbox
   tasks:
-  - name: Make directory
+  - name: Make temporarily directory
     file:
       path: ~/.temp
       state: directory
       mode: 0777
-  - name: Get script
+  - name: Download script in the temporarily directory
     get_url:
       url: https://raw.githubusercontent.com/Danik1601/Better-Fedora/main/Resources/Better-Fedora.sh
       dest: ~/.temp
       mode: 0777
   - name: Execute the script
     command: sudo sh ~/.temp/Better-Fedora.sh
+  - name: Delete temporarily directory
+    file:
+      path: ~/.temp
+      state: absent
