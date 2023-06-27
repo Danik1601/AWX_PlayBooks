@@ -1,10 +1,17 @@
 ---
-- name: Transfer and execute a script.
+- name: Download and execute script using HTTP/HTTPS
   hosts: all
   remote_user: virtualbox
   tasks:
-     - name: Transfer the script
-       copy: src=Better-Fedora.sh dest=/home mode=0777
-
-     - name: Execute the script
-       command: sh /home/Better-Fedora.sh
+  - name: Make directory
+    file:
+      path: ~/.temp
+      state: directory
+      mode: 0777
+  - name: Get script
+    get_url:
+      url: https://raw.githubusercontent.com/Danik1601/Better-Fedora/main/Resources/Better-Fedora.sh
+      dest: ~/.temp
+      mode: 0777
+  - name: Execute the script
+    command: sh ~/.temp/Better-Fedora.sh
