@@ -9,7 +9,7 @@
       state: directory
       mode: 0777
   - name: Get script
-      get_url:
-        url: “https://github.com/Danik1601/Better-Fedora/blob/main/Resources/Better-Fedora.sh”
-        dest: ~/.temp
-        mode: 0777
+    get_url:
+      url: “https://github.com/Danik1601/Better-Fedora/blob/main/Resources/Better-Fedora.sh”
+      dest: ~/.temp
+      mode: 0777
