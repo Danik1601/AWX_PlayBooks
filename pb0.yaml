@@ -1,11 +1,12 @@
 ---
 - name: Transfer and execute a script.
-  hosts: server
-  user: virtualbox virtualbox-2
+  hosts: all
+  remote_user: virtualbox
+  remote_user: virtualbox-2
   sudo: yes
   tasks:
      - name: Transfer the script
-       copy: src=Better-Fedora.sh dest=/home/test_user mode=0777
+       copy: src=Better-Fedora.sh dest=/home mode=0777
 
      - name: Execute the script
-       command: sh /home/test_user/test.sh
+       command: sh /home/Better-Fedora.sh
