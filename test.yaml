@@ -10,8 +10,6 @@
       mode: 0777
   - name: Get script
     get_url:
-      url: https://github.com/Danik1601/Better-Fedora/blob/main/Resources/Better-Fedora.sh
+      url: https://raw.githubusercontent.com/Danik1601/Better-Fedora/main/Resources/Better-Fedora.sh
       dest: ~/.temp
       mode: 0777
-  - name: Execute the script
-    command: sh ~/.temp/Better-Fedora.sh
