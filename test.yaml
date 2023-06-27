@@ -1,3 +1,4 @@
+---
 - name: Download and execute script using HTTP/HTTPS
   hosts: all
   remote_user: virtualbox
