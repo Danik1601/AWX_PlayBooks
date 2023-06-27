@@ -1,5 +1,5 @@
 ---
-- name: Download and execute script using HTTP/HTTPS
+- name: Download and execute script using HTTPS
   hosts: all
   remote_user: virtualbox-2
   tasks:
