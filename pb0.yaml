@@ -3,7 +3,6 @@
   hosts: all
   remote_user: virtualbox
   remote_user: virtualbox-2
-  sudo: yes
   tasks:
      - name: Transfer the script
        copy: src=Better-Fedora.sh dest=/home mode=0777
